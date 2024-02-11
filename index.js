@@ -42,3 +42,24 @@ console.log(isAnagram("anagram", "nagaram"));
 console.log(isAnagram("rat", "car"));
 
 console.log("___________________________________________________________");
+
+// You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+
+function climbStairs(n) {
+    if (n <= 2) return n;
+
+    let prev = 1;
+    let current = 2;
+
+    for (let i = 3; i <= n; i++) {
+        const temp = current;
+        current = prev + current;
+        prev = temp;
+    }
+
+    return current;
+}
+
+console.log(climbStairs(2));
+console.log(climbStairs(3));
+console.log(climbStairs(6));
