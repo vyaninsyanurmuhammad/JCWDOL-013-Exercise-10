@@ -17,8 +17,10 @@ const titleToNumber = (s) => {
     return result;
 }
 
+console.log(titleToNumber("AA"));
 console.log(titleToNumber("AB"));
 console.log(titleToNumber("ZB"));
+console.log(titleToNumber("ZZ"));
 console.log(titleToNumber("AAB"));
 
 console.log("___________________________________________________________");
@@ -84,4 +86,5 @@ function climbStairs(n) {
 
 console.log(climbStairs(2));
 console.log(climbStairs(3));
+console.log(climbStairs(4));
 console.log(climbStairs(6));
