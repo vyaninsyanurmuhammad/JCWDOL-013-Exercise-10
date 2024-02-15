@@ -55,11 +55,17 @@ const isAnagram = (s, t) => {
         collectCharS[sChar] = collectCharS[sChar] ? collectCharS[sChar] + 1 : 1;
     }
 
-    for (const tChar of s) {
+    for (const tChar of t) {
         collectCharT[tChar] = collectCharT[tChar] ? collectCharT[tChar] + 1 : 1;
     }
+    
+    for (const sChar in collectCharS) {
+        if (collectCharS[sChar] !== collectCharT[sChar]) {
+            return false;
+        }
+    }
 
-    return JSON.stringify(collectCharS) === JSON.stringify(collectCharT);
+    return true;
 }
 
 console.log(isAnagram("anagram", "nagaram"));
