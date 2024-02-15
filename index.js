@@ -1,5 +1,27 @@
 // Create a function to convert Excel sheet column title to its corresponding column number.
 
+const titleToNumber = (s) => {
+    const charList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+    let result = 0;
+    let pow = 0;
+
+    for (let i = s.length - 1; i >= 0; i--) {
+        const charNum = charList.findIndex((data) => data === s[i]) + 1;
+
+        result += charNum * Math.pow(charList.length, pow);
+
+        pow++;
+    }
+
+    return result;
+}
+
+console.log(titleToNumber("AB"));
+console.log(titleToNumber("ZB"));
+console.log(titleToNumber("AAB"));
+
+console.log("___________________________________________________________");
 
 // Given a non-empty array of integers nums, every element appears twice except for one. Find that single one
 
