@@ -68,8 +68,13 @@ const isAnagram = (s, t) => {
     return true;
 }
 
+const isAnagramV2 = (s, t) => s.split("").sort().join("") === t.split("").sort().join("");
+
 console.log(isAnagram("anagram", "nagaram"));
 console.log(isAnagram("rat", "car"));
+
+console.log(isAnagramV2("anagram", "nagaram"));
+console.log(isAnagramV2("rat", "car"));
 
 console.log("___________________________________________________________");
 
